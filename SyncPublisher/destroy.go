@@ -1,6 +1,6 @@
 package SyncPublisher
 
-import "rabbitUtil/destroyer"
+import "github.com/leeming87v5/rabbitUtil/destroyer"
 
 // Destroy instance of Destroyer
 // If GOGC=off you should call obj.Destroy() manually
