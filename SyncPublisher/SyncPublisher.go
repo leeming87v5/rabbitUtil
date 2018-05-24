@@ -6,7 +6,7 @@ import (
 	"runtime"
 	"sync"
 	"time"
-	"ul_hashTaskEjector/rabbitUtil"
+	"github.com/leeming87v5/rabbitUtil"
 
 	"github.com/streadway/amqp"
 )
