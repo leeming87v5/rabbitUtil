@@ -4,7 +4,7 @@ import (
 	// "github.com/neverlee/glog"
 	"errors"
 	"math/rand"
-	"rabbitUtil"
+	"github.com/leeming87v5/rabbitUtil"
 	"runtime"
 	"sync"
 	"time"
