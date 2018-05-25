@@ -48,3 +48,28 @@ func myCallback(message []byte, args ...interface{}) error {
   return nil
 }
 ```
+## SyncPublisher
+用于向指定的队列推送消息，带有 confirm 功能，采用同步机制，即发送后会等待确认后才会返回
+```go
+package main
+
+import "fmt"
+import "os"
+import "github/leeming87v5/rabbitUtil"
+import "github/leeming87v5/rabbitUtil/SyncPublisher"
+
+func main() {
+  // 首先，初始化一个 SyncPublish 对象
+  hosts := []string{"amqp://guest:guest@127.0.0.1:5672"}
+  queueName := "your_test_queue"
+  exchangeName := "ampq.direct"
+  publisher, err := SyncPublisher.NewSyncPublisher(hosts, queueName, exchangeName)
+  if err != nil {
+	  fmt.Printf("[%v] SyncPublisher init error: %v\n", time.Now(), err)
+	  os.Exit(1)
+  }
+  
+  // 然后，调用 publisher.Publish() 以向队列推送消息。
+  publisher.Publish([]byte("Hello rabbit!"))
+}
+```
