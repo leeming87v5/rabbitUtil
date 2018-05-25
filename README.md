@@ -70,6 +70,9 @@ func main() {
   }
   
   // 然后，调用 publisher.Publish() 以向队列推送消息。
-  publisher.Publish([]byte("Hello rabbit!"))
+  err = publisher.Publish([]byte("Hello rabbit!"))
+  if err != nil {
+  	fmt.Printf("[%v] publisher error: %v\n", err)
+  }
 }
 ```
