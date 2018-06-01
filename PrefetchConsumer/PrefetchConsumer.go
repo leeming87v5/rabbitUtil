@@ -106,7 +106,7 @@ func (this *PrefetchConsumer) reconnect() error {
 	if err != nil {
 		return err
 	}
-	err = this.ch.Qos(30, 0, false)
+	err = this.ch.Qos(1, 0, false)
 	if err != nil {
 		return err
 	}
